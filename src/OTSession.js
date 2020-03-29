@@ -53,7 +53,7 @@ export default class OTSession extends Component {
     ) {
       this.sessionHelper.session.on(this.props.eventHandlers);
     }
-    if(this.sessionHelper && this.sessionHelper.session){
+    if (this.sessionHelper && this.sessionHelper.session && this.props.currentSession) {
       this.props.currentSession(this.sessionHelper.session);
     }
     const { streams } = this.sessionHelper;
@@ -95,6 +95,7 @@ OTSession.propTypes = {
 OTSession.defaultProps = {
   eventHandlers: null,
   onConnect: null,
+  currentSession: null,
   onError: null,
   options: {},
 };
