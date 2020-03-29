@@ -86,7 +86,7 @@ var OTSession = function (_Component) {
       if (this.props.eventHandlers && _typeof(this.props.eventHandlers) === 'object') {
         this.sessionHelper.session.on(this.props.eventHandlers);
       }
-      if (this.sessionHelper && this.sessionHelper.session) {
+      if (this.sessionHelper && this.sessionHelper.session && this.props.currentSession) {
         this.props.currentSession(this.sessionHelper.session);
       }
       var streams = this.sessionHelper.streams;
@@ -135,6 +135,7 @@ OTSession.propTypes = {
 OTSession.defaultProps = {
   eventHandlers: null,
   onConnect: null,
+  currentSession: null,
   onError: null,
   options: {}
 };
